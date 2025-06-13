@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio | Kambale Kyavuyirwe Idriss</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- CSS personnalisé -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <!-- Barre de navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="#">Idriss K. – Web & Mobile Developer</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="#home">Accueil</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#about">À propos</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#projects">Projets</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#contact">Contact</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="login.html">Connexion</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Section Hero -->
+    <section id="home" class="hero-section">
+        <div class="container h-100">
+            <div class="row h-100 align-items-center">
+                <div class="col-lg-7">
+                    <h1 class="display-4 fw-bold">Kambale Kyavuyirwe Idriss</h1>
+                    <h2 class="text-primary">Ingénieur en Génie Informatique</h2>
+                    <p class="lead mt-3">Je défends mon mémoire cette année sur un sujet innovant lié aux systèmes de gestion intégrés.</p>
+                    <a href="#contact" class="btn btn-primary btn-lg mt-3">Me contacter</a>
+                </div>
+                <div class="col-lg-5 d-none d-lg-block">
+                    <img src="/assets/image/idriss.jpeg" alt="Photo de profil" class="img-fluid rounded-circle profile-img">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section À propos -->
+    <section id="about" class="py-5 bg-light">
+        <div class="container">
+            <h2 class="text-center mb-5">À propos de moi</h2>
+            <div class="row">
+                <div class="col-lg-6">
+                    <h3>Mon parcours</h3>
+                    <p>Je suis un ingénieur en génie informatique passionné par les nouvelles technologies et l'innovation. Mon parcours académique et professionnel m'a permis d'acquérir des compétences solides en développement logiciel, base de données, intelligence artificielle et systèmes d'information.</p>
+                    <p>En phase de finalisation de mon mémoire, je me concentre sur l’étude et la mise en œuvre de solutions innovantes pour améliorer les performances des systèmes de gestion intégrés.</p>
+                </div>
+                <div class="col-lg-6">
+                    <h3>Compétences</h3>
+                    <div class="skills">
+                        <div class="skill-item">
+                            <span>Développement Web</span>
+                            <div class="progress">
+                                <div class="progress-bar bg-primary" style="width: 90%"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <span>Intelligence Artificielle</span>
+                            <div class="progress">
+                                <div class="progress-bar bg-primary" style="width: 85%"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <span>Base de données</span>
+                            <div class="progress">
+                                <div class="progress-bar bg-primary" style="width: 80%"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <span>Réseaux informatiques</span>
+                            <div class="progress">
+                                <div class="progress-bar bg-primary" style="width: 75%"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section Projets -->
+    <section id="projects" class="py-5">
+        <div class="container">
+            <h2 class="text-center mb-5">Mes Projets</h2>
+            <div class="row g-4">
+                <!-- Projet 1 -->
+                <div class="col-md-4">
+                    <div class="card h-100 project-card">
+                        <img src="assets/project1.jpg" class="card-img-top" alt="Projet 1">
+                        <div class="card-body">
+                            <h5 class="card-title">Système de recommandation IA</h5>
+                            <p class="card-text">Développement d'un système de recommandation basé sur l'apprentissage automatique pour une plateforme e-commerce.</p>
+                            <span class="badge bg-primary">Python</span>
+                            <span class="badge bg-secondary">TensorFlow</span>
+                        </div>
+                    </div>
+                </div>
+                <!-- Projet 2 -->
+                <div class="col-md-4">
+                    <div class="card h-100 project-card">
+                        <img src="assets/project2.jpg" class="card-img-top" alt="Projet 2">
+                        <div class="card-body">
+                            <h5 class="card-title">Application web de gestion scolaire intégrée</h5>
+                            <p class="card-text">Conception et developpement d'une application web complète pour la gestion scolaire intégrée.</p>
+                            <span class="badge bg-primary">JavaScript</span>
+                            <span class="badge bg-secondary">Node.js</span>
+                            <span class="badge bg-info">MongoDB</span>
+                        </div>
+                    </div>
+                </div>
+                <!-- Projet 3 -->
+                <div class="col-md-4">
+                    <div class="card h-100 project-card">
+                        <img src="assets/project3.jpg" class="card-img-top" alt="Projet 3">
+                        <div class="card-body">
+                            <h5 class="card-title">Mémoire de fin d'études</h5>
+                            <p class="card-text">Conception et developpement d'un système de gestion scolaire intégrée.</p>
+                            <span class="badge bg-primary">gestion</span>
+                            <span class="badge bg-secondary">administration</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section Contact -->
+    <section id="contact" class="py-5 bg-light">
+        <div class="container">
+            <h2 class="text-center mb-5">Contactez-moi</h2>
+            <div class="row">
+                <div class="col-lg-6">
+                    <form id="contactForm">
+                        <div class="mb-3">
+                            <label for="name" class="form-label">Nom complet</label>
+                            <input type="text" class="form-control" id="name" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="email" class="form-label">Email</label>
+                            <input type="email" class="form-control" id="email" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="message" class="form-label">Message</label>
+                            <textarea class="form-control" id="message" rows="5" required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Envoyer</button>
+                    </form>
+                </div>
+                <div class="col-lg-6 mt-4 mt-lg-0">
+                    <div class="contact-info">
+                        <div class="info-item">
+                            <i class="fas fa-envelope"></i>
+                            <span>idrisskyavuyirwe@gmail.com</span>
+                        </div>
+                        <div class="info-item">
+                            <i class="fas fa-phone"></i>
+                            <span>+243 972 696 705</span>
+                        </div>
+                        <div class="info-item">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>Ngaliema, Kinshasa, République Démocratique du Congo</span>
+                        </div>
+                    </div>
+                    <div class="social-links mt-4">
+                        <a href="https://x.com/i_kyavuyirwe?s=21" target="_blank" class="social-icon" title="Twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="https://www.facebook.com/share/16hBnhknos/?mibextid=wwXIfr" target="_blank" class="social-icon" title="Facebook"><i class="fab fa-facebook"></i></a>
+                        <a href="https://www.instagram.com/idriss_kyavuyirwe" target="_blank" class="social-icon" title="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="https://www.tiktok.com/@134xg" target="_blank" class="social-icon" title="TikTok"><i class="fab fa-tiktok"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pied de page -->
+    <footer class="bg-dark text-white py-4">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <p>&copy; 2025 Kambale Kyavuyirwe Idriss. Tous droits réservés.</p>
+                </div>
+                <div class="col-md-6 text-md-end">
+                    <a href="#" class="text-white me-3">Mentions légales</a>
+                    <a href="#" class="text-white">Politique de confidentialité</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS et dépendances -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- JS personnalisé -->
+    <script src="js/script.js"></script>
+</body>
+</html>

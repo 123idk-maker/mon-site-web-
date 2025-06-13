@@ -1,0 +1,153 @@
+/* Styles généraux */
+:root {
+    --primary-color: #0d6efd;
+    --secondary-color: #6c757d;
+    --dark-color: #212529;
+    --light-color: #f8f9fa;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    padding-top: 56px;
+}
+
+/* Section Hero */
+.hero-section {
+    min-height: 100vh;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    padding: 100px 0;
+    display: flex;
+    align-items: center;
+}
+
+.profile-img {
+    border: 5px solid white;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    max-width: 350px;
+}
+
+/* Compétences */
+.skills {
+    margin-top: 20px;
+}
+
+.skill-item {
+    margin-bottom: 15px;
+}
+
+.skill-item span {
+    display: block;
+    margin-bottom: 5px;
+}
+
+/* Cartes de projets */
+.project-card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border: none;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.project-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+.project-card .card-img-top {
+    height: 200px;
+    object-fit: cover;
+}
+
+/* Contact */
+.contact-info {
+    background: white;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.info-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.info-item i {
+    font-size: 20px;
+    color: var(--primary-color);
+    margin-right: 15px;
+    width: 30px;
+    text-align: center;
+}
+
+.social-links {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+}
+
+.social-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: var(--primary-color);
+    color: white;
+    font-size: 20px;
+    transition: all 0.3s ease;
+}
+
+.social-icon:hover {
+    background-color: var(--dark-color);
+    transform: translateY(-3px);
+    text-decoration: none;
+    color: white;
+}
+
+/* Page de connexion */
+.login-page {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.login-container {
+    width: 100%;
+    max-width: 400px;
+    padding: 20px;
+}
+
+.login-card {
+    border: none;
+    border-radius: 10px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+/* Animation */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.animate-fadeIn {
+    animation: fadeIn 1s ease forwards;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .hero-section {
+        text-align: center;
+        padding-top: 80px;
+        padding-bottom: 80px;
+    }
+    
+    .profile-img {
+        margin-top: 30px;
+        max-width: 250px;
+    }
+}

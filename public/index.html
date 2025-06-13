@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mon Portfolio</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">Portfolio</div>
+            <ul class="nav-links">
+                <li><a href="#accueil">Accueil</a></li>
+                <li><a href="#projets">Projets</a></li>
+                <li><a href="#competences">Compétences</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <div class="burger">
+                <div class="line1"></div>
+                <div class="line2"></div>
+                <div class="line3"></div>
+            </div>
+        </nav>
+    </header>
+
+    <section id="accueil" class="hero">
+        <div class="hero-content">
+            <h1>Bienvenue sur mon Portfolio</h1>
+            <p>Développeur Web Passionné</p>
+            <a href="#contact" class="cta-button">Me Contacter</a>
+        </div>
+    </section>
+
+    <section id="projets" class="projects">
+        <h2>Mes Projets</h2>
+        <div class="projects-grid" id="projects-container">
+            <!-- Les projets seront ajoutés dynamiquement ici -->
+        </div>
+    </section>
+
+    <section id="competences" class="skills">
+        <h2>Compétences</h2>
+        <div class="skills-container">
+            <div class="skill-category">
+                <h3>Frontend</h3>
+                <ul>
+                    <li>HTML5</li>
+                    <li>CSS3</li>
+                    <li>JavaScript</li>
+                    <li>React</li>
+                </ul>
+            </div>
+            <div class="skill-category">
+                <h3>Backend</h3>
+                <ul>
+                    <li>Node.js</li>
+                    <li>Express</li>
+                    <li>SQLite</li>
+                    <li>API REST</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="contact">
+        <h2>Contact</h2>
+        <form id="contact-form">
+            <div class="form-group">
+                <input type="text" id="nom" name="nom" required placeholder="Votre nom">
+            </div>
+            <div class="form-group">
+                <input type="email" id="email" name="email" required placeholder="Votre email">
+            </div>
+            <div class="form-group">
+                <textarea id="message" name="message" required placeholder="Votre message"></textarea>
+            </div>
+            <button type="submit" class="submit-btn">Envoyer</button>
+        </form>
+        <div class="contact-info">
+            <p><i class="fas fa-phone"></i> +243972696705</p>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 Mon Portfolio. Tous droits réservés.</p>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+</html>
