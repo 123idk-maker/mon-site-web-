@@ -1,0 +1,4 @@
+# Fichiers à ignorer
+*.db
+node_modules/
+.env
