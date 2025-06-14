@@ -4,12 +4,13 @@
   "description": "Mon site portfolio personnel",
   "main": "server.js",
   "scripts": {
-    "start": "node server.js",
+    "start": "NODE_ENV=production node server.js",
     "dev": "nodemon server.js"
   },
   "dependencies": {
     "bcryptjs": "^3.0.2",
     "better-sqlite3": "^11.10.0",
+    "sqlite3": "^5.1.6",
     "cookie-parser": "^1.4.7",
     "cors": "^2.8.5",
     "dotenv": "^16.3.1",

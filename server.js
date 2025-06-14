@@ -1,6 +1,8 @@
 const express = require('express');
 const cors = require('cors');
-const Database = require('better-sqlite3');
+const Database = process.env.NODE_ENV === 'production' 
+  ? require('sqlite3').verbose()
+  : require('better-sqlite3');
 const path = require('path');
 const bcrypt = require('bcryptjs');
 const jwt = require('jsonwebtoken');
@@ -11,7 +13,7 @@ const ADMIN_EMAIL = 'idrisskyavuyirwe@gmail.com';
 const ADMIN_PASSWORD = 'admin123'; // Vous devrez changer ce mot de passe
 
 const app = express();
-const port = process.env.PORT || 3000;
+const port = process.env.PORT || 3000; // Port 3000 pour développement local, utilise PORT de Render en production
 
 // Middleware
 app.use(cors({
@@ -123,6 +125,7 @@ app.post('/api/messages', (req, res) => {
 });
 
 // Démarrage du serveur
+console.log(`Démarrage du serveur sur le port ${port}`);
 app.listen(port, () => {
   console.log(`Serveur démarré sur http://localhost:${port}`);
 });
