@@ -9,7 +9,6 @@
   },
   "dependencies": {
     "bcryptjs": "^3.0.2",
-    "better-sqlite3": "^11.10.0",
     "sqlite3": "^5.1.6",
     "cookie-parser": "^1.4.7",
     "cors": "^2.8.5",

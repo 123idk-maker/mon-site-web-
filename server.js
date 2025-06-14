@@ -1,8 +1,6 @@
 const express = require('express');
 const cors = require('cors');
-const Database = process.env.NODE_ENV === 'production' 
-  ? require('sqlite3').verbose()
-  : require('better-sqlite3');
+const Database = require('sqlite3').verbose(); // Utiliser SQLite3 uniquement pour une meilleure compatibilité avec Render
 const path = require('path');
 const bcrypt = require('bcryptjs');
 const jwt = require('jsonwebtoken');
@@ -43,9 +41,13 @@ app.use('/assets', express.static(path.join(__dirname, 'assets')));
 app.use('/assets/image', express.static(path.join(__dirname, 'assets', 'image')));
 
 // Connexion à la base de données SQLite
-const db = new Database('./database.db', {
-  fileMustExist: false,
-  verbose: console.log
+const db = new Database('./database.db', (err) => {
+  if (err) {
+    console.error('Erreur de connexion à la base de données:', err);
+    process.exit(1);
+  }
+  console.log('Connexion à la base de données SQLite établie');
+  initializeDatabase();
 });
 
 // Initialisation de la base de données
@@ -54,7 +56,7 @@ initializeDatabase();
 // Initialisation de la base de données
 function initializeDatabase() {
   // Table Projets
-  db.prepare(`CREATE TABLE IF NOT EXISTS projets (
+  db.run(`CREATE TABLE IF NOT EXISTS projets (
     id INTEGER PRIMARY KEY AUTOINCREMENT,
     titre TEXT NOT NULL,
     description TEXT,
@@ -62,16 +64,16 @@ function initializeDatabase() {
     image_url TEXT,
     lien_github TEXT,
     lien_demo TEXT
-  )`).run();
+  )`);
 
   // Table Messages
-  db.prepare(`CREATE TABLE IF NOT EXISTS messages (
+  db.run(`CREATE TABLE IF NOT EXISTS messages (
     id INTEGER PRIMARY KEY AUTOINCREMENT,
     nom TEXT NOT NULL,
     email TEXT NOT NULL,
     message TEXT NOT NULL,
     date DATETIME DEFAULT CURRENT_TIMESTAMP
-  )`).run();
+  )`);
 }
 
 // Route de connexion
