@@ -1,6 +1,7 @@
 const express = require('express');
 const cors = require('cors');
-const Database = require('sqlite3').verbose(); // Utiliser SQLite3 uniquement pour une meilleure compatibilité avec Render
+const sqlite3 = require('sqlite3').verbose(); // Utiliser SQLite3 uniquement pour une meilleure compatibilité avec Render
+const Database = sqlite3.Database;
 const path = require('path');
 const bcrypt = require('bcryptjs');
 const jwt = require('jsonwebtoken');
@@ -47,8 +48,36 @@ const db = new Database('./database.db', (err) => {
     process.exit(1);
   }
   console.log('Connexion à la base de données SQLite établie');
-  initializeDatabase();
 });
+
+try {
+  // Initialisation de la base de données
+  function initializeDatabase() {
+    // Table Projets
+    db.run(`CREATE TABLE IF NOT EXISTS projets (
+      id INTEGER PRIMARY KEY AUTOINCREMENT,
+      titre TEXT NOT NULL,
+      description TEXT,
+      technologies TEXT,
+      image_url TEXT,
+      lien_github TEXT,
+      lien_demo TEXT
+    )`);
+
+    // Table Messages
+    db.run(`CREATE TABLE IF NOT EXISTS messages (
+      id INTEGER PRIMARY KEY AUTOINCREMENT,
+      nom TEXT NOT NULL,
+      email TEXT NOT NULL,
+      message TEXT NOT NULL,
+      date DATETIME DEFAULT CURRENT_TIMESTAMP
+    )`);
+  }
+  initializeDatabase();
+} catch (err) {
+  console.error('Erreur de connexion à la base de données:', err);
+  process.exit(1);
+}
 
 // Initialisation de la base de données
 initializeDatabase();
@@ -102,7 +131,7 @@ app.get('/private.html', authenticateToken, (req, res) => {
 
 // Routes API
 app.get('/api/projets', (req, res) => {
-  db.all('SELECT * FROM projets', [], (err, rows) => {
+  db.all('SELECT * FROM projets', [], function(err, rows) {
     if (err) {
       res.status(500).json({ error: err.message });
       return;
